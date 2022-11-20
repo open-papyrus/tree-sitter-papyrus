@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "EditorConfig.EditorConfig",
+        "valentjn.vscode-ltex",
+        "dbaeumer.vscode-eslint"
+    ],
+    "unwantedRecommendations": [
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint"
+    ]
+}

@@ -1,0 +1,5 @@
+* text eol=lf
+
+/src/** linguist-generated
+/src/scanner.* linguist-generated=false
+/binding.gyp linguist-detectable=false
