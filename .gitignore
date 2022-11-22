@@ -3,3 +3,7 @@
 /.idea/
 /target
 *.log
+
+*.exp
+*.lib
+*.obj

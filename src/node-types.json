@@ -1,11 +1,36 @@
 [
   {
-    "type": "source_file",
+    "type": "documentation_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "multi_line_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "script_file",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "script_header",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "script_header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
       "types": [
         {
           "type": "identifier",
@@ -15,7 +40,36 @@
     }
   },
   {
+    "type": "single_line_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "/;",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": ";/",
+    "named": false
+  },
+  {
+    "type": "ScriptName",
+    "named": false
+  },
+  {
     "type": "identifier",
     "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
   }
 ]

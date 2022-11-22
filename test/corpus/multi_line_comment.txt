@@ -1,0 +1,23 @@
+===
+Multi-line Comment
+===
+
+;/
+this
+goes
+on
+multiple
+lines
+/;
+
+ScriptName MyScript
+
+;/very cool!/;
+
+---
+
+(script_file
+    (multi_line_comment)
+    (script_header
+        (identifier))
+    (multi_line_comment))

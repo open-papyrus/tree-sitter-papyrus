@@ -1,0 +1,11 @@
+===
+Script Header
+===
+
+ScriptName MyScript
+
+---
+
+(script_file
+    (script_header
+        (identifier)))

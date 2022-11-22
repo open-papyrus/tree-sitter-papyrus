@@ -1,0 +1,15 @@
+===
+Single-line Comment
+===
+
+; this is a comment
+ScriptName MyScript
+;and another
+
+---
+
+(script_file
+    (single_line_comment)
+    (script_header
+        (identifier))
+    (single_line_comment))

@@ -1,0 +1,14 @@
+===
+Documentation Comment
+===
+
+ScriptName MyScript
+{Cool
+Comment}
+
+---
+
+(script_file
+    (script_header
+        (identifier))
+    (documentation_comment))
