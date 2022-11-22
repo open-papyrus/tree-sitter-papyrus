@@ -75,8 +75,6 @@ jobs:
                   cache: "npm"
                   cache-dependency-path: package-lock.json
 
-            - name: node-gyp configure
-              run: npm run configure
-
-            - name: node-gyp build
-              run: npm run build
+            - run: npm ci
+            - run: npm run configure
+            - run: npm run build
