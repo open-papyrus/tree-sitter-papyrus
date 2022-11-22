@@ -9,8 +9,9 @@ on:
 
 jobs:
     generate:
-        name: Generate
+        name: Generate and Test
         runs-on: ubuntu-latest
+        continue-on-error: true
 
         steps:
             - uses: actions/checkout@v3
@@ -24,10 +25,45 @@ jobs:
 
             - run: npm ci
             - run: npm run generate
+            - run: npm run test
 
-    test:
-        name: Test
+    bindings-rust:
+        name: Build Rust bindings
         runs-on: ubuntu-latest
+        continue-on-error: true
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Install Toolchain
+              uses: actions-rs/toolchain@v1
+              with:
+                  profile: minimal
+                  toolchain: stable
+
+            - name: Cache cargo dependencies
+              uses: actions/cache@v3
+              with:
+                  path: |
+                      ~/.cargo/registry/index
+                      ~/.cargo/registry/cache
+                      ~/.cargo/git/db
+                  key: cargo-deps-${{ hashFiles('**/Cargo.lock') }}
+
+            - name: Build
+              uses: actions-rs/cargo@v1
+              with:
+                  command: build
+
+    bindings-node:
+        name: Build Node bindings
+        strategy:
+            matrix:
+                os: [ubuntu-latest, windows-latest]
+            fail-fast: true
+
+        continue-on-error: true
+        runs-on: ${{ matrix.os }}
 
         steps:
             - uses: actions/checkout@v3
@@ -39,5 +75,8 @@ jobs:
                   cache: "npm"
                   cache-dependency-path: package-lock.json
 
-            - run: npm ci
-            - run: npm run test
+            - name: node-gyp configure
+              run: npm run configure
+
+            - name: node-gyp build
+              run: npm run build
