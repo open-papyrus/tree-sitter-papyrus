@@ -1,4 +1,12 @@
 {
     "ltex.language": "en-US",
-    "ltex.enabled": ["markdown"]
+    "ltex.enabled": [
+        "markdown"
+    ],
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
