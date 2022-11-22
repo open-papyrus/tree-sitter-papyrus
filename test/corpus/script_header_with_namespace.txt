@@ -1,0 +1,14 @@
+===
+Script Header with Namespaced Identifiers
+===
+
+ScriptName Quests:MyQuest:Script1
+
+---
+
+(script_file
+    (script_header
+        (namespaced_identifier
+            (identifier)
+            (identifier)
+            (identifier))))

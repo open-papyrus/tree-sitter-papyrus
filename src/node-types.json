@@ -10,6 +10,21 @@
     "fields": {}
   },
   {
+    "type": "namespaced_identifier",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "script_file",
     "named": true,
     "fields": {},
@@ -35,6 +50,10 @@
         {
           "type": "identifier",
           "named": true
+        },
+        {
+          "type": "namespaced_identifier",
+          "named": true
         }
       ]
     }
@@ -46,6 +65,10 @@
   },
   {
     "type": "/;",
+    "named": false
+  },
+  {
+    "type": ":",
     "named": false
   },
   {
