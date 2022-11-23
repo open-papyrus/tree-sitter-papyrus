@@ -11,3 +11,7 @@ The grammar is defined in [grammar.js](./grammar.js). You can use the following 
 
 - `npm run generate`
 - `npm run test`
+
+## Committing
+
+Before committing any changes, make sure to sign your commits using either [SSH](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#ssh-commit-signature-verification) (recommended) or [GPG](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#gpg-commit-signature-verification) commit signature verification. The master branch has branch protection rules in place and requires signed commits.
