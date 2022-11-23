@@ -15,37 +15,85 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "STRING",
-          "value": "ScriptName"
+          "type": "PATTERN",
+          "value": "S[cC][rR][iI][pP][tT]N[aA][mM][eE]"
         },
         {
-          "type": "SYMBOL",
-          "name": "_normal_or_namespaced_identifier"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_normal_or_namespaced_identifier"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "extends",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "PATTERN",
+                    "value": "[eE][xX][tT][eE][nN][dD][sS]"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "_normal_or_namespaced_identifier"
+                  }
+                ]
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "flags",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "PATTERN",
+                      "value": "B[eE][tT][aA]O[nN][lL][yY]"
+                    },
+                    {
+                      "type": "PATTERN",
+                      "value": "C[oO][nN][sS][tT]"
+                    },
+                    {
+                      "type": "PATTERN",
+                      "value": "D[eE][bB][uU][gG]O[nN][lL][yY]"
+                    },
+                    {
+                      "type": "PATTERN",
+                      "value": "N[aA][tT][iI][vV][eE]"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "identifier"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
         },
         {
           "type": "SYMBOL",
           "name": "_terminator"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "extends"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "_normal_or_namespaced_identifier"
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
         }
       ]
     },

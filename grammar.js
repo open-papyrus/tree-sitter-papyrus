@@ -6,10 +6,21 @@ module.exports = grammar({
 
         script_header: ($) =>
             seq(
-                "ScriptName",
-                $._normal_or_namespaced_identifier,
+                keyword("ScriptName"),
+                field("name", $._normal_or_namespaced_identifier),
+                field("extends", optional(seq(keyword("extends"), $._normal_or_namespaced_identifier))),
+                field("flags", optional(
+                    repeat(
+                        choice(
+                            keyword("BetaOnly"),
+                            keyword("Const"),
+                            keyword("DebugOnly"),
+                            keyword("Native"),
+                            $.identifier,
+                        ),
+                    ),
+                )),
                 $._terminator,
-                optional(seq("extends", $._normal_or_namespaced_identifier)),
             ),
 
         single_line_comment: ($) => seq(";", /[^\n]*/, $._terminator),
@@ -37,3 +48,13 @@ module.exports = grammar({
         $.documentation_comment,
     ],
 });
+
+function keyword(name) {
+    const result = new RegExp(
+        name
+            .split("")
+            .map((l) => (l !== l.toUpperCase() ? `[${l}${l.toUpperCase()}]` : l))
+            .join(""),
+    );
+    return result;
+}

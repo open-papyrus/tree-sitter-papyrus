@@ -42,20 +42,45 @@
   {
     "type": "script_header",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "namespaced_identifier",
-          "named": true
-        }
-      ]
+    "fields": {
+      "extends": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "namespaced_identifier",
+            "named": true
+          }
+        ]
+      },
+      "flags": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "namespaced_identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -77,14 +102,6 @@
   },
   {
     "type": ";/",
-    "named": false
-  },
-  {
-    "type": "ScriptName",
-    "named": false
-  },
-  {
-    "type": "extends",
     "named": false
   },
   {

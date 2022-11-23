@@ -1,0 +1,12 @@
+===
+Script Header with Flags
+===
+
+ScriptName MyScript DebugOnly BetaOnly Const Native Hidden
+
+---
+
+(script_file
+    (script_header
+        (identifier)
+        (identifier)))

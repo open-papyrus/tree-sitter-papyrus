@@ -1,0 +1,12 @@
+===
+ScriptHeader with extends
+===
+
+ScriptName MyScript EXTENDS OtherScript
+
+---
+
+(script_file
+    (script_header
+        (identifier)
+        (identifier)))
